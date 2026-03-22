@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  livroservice:
+    build: ./LivroService
+    ports:
+      - "8001:8000"
+
+  emprestimoservice:
+    build: ./EmprestimoService
+    ports:
+      - "8002:8000"
+    depends_on:
+      - livroservice
